@@ -6,7 +6,7 @@
         <title>Show Customer Info</title>
     </h:head>
     <h:body>
-        Name: #{customer.name}<br />
+        Name: "#{customer.name}"<br />
         Gender: #{customer.gender == "F"?"男":"女"}<br />
         
         <h:link outcome="index">Back</h:link>

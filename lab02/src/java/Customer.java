@@ -40,6 +40,7 @@ public class Customer {
         this.name = name;
     }
 
+    
     private String gender;
 
     /**
@@ -64,8 +65,9 @@ public class Customer {
     }
     
     public String handleAction(){
-        System.out.print(name);
-        return "showinfo?faces-redirect=true";
+        System.out.print(this.name);
+        System.out.print(this.gender);
+        return "showinfo";
     }
     
 }
