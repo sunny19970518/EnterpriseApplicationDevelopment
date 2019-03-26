@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Unit 04 Assignment</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"></link>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </h:head>
+    <h:body>
+        
+       <div class="container-fluid text-center">
+        <h2>Cars</h2>
+        <h4>Infomation</h4>
+            <h:form>
+            Car : <h:selectOneMenu value="#{carSelectionBean.carId}">
+                <f:selectItems value="#{carSelectionBean.cars}" var="car" itemLabel="#{car.name.concat(' ').concat(car.manufacturer)}" itemValue="#{car.id}"></f:selectItems> 
+            </h:selectOneMenu>
+            <h:commandButton action="#{carSelectionBean.dispalyInfo()}" value="display"></h:commandButton>
+        </h:form>
+        <br />
+              <div class="row">
+                <div class="col-sm-4">
+                  <span class="glyphicon glyphicon-heart"></span>
+                  <h4>Create</h4>
+                  <p>Create a new car</p>
+                  <h:form>
+                    <p>car name : <h:inputText value="#{carSelectionBean.carName}"></h:inputText></p>
+                    <p>car facturer : <h:inputText value="#{carSelectionBean.facturer}"></h:inputText></p>
+                    <p>car image : <h:inputText value="#{carSelectionBean.imgUrl}"></h:inputText></p>
+                    <h:commandButton action="#{carSelectionBean.addCar()}" value="add"></h:commandButton>
+                  </h:form>
+                </div>
+                <div class="col-sm-4">
+                  <span class="glyphicon glyphicon-wrench"></span>
+                  <h4>Update</h4>
+                  <p>Update a car</p>
+                  <h:form>
+                    <p><h:selectOneMenu value="#{carSelectionBean.carId}">
+                        <f:selectItems value="#{carSelectionBean.cars}" var="car" itemLabel="#{car.name.concat(' ').concat(car.manufacturer)}" itemValue="#{car.id}"></f:selectItems> 
+                    </h:selectOneMenu></p>
+                    <p>car name : <h:inputText value="#{carSelectionBean.carName}"></h:inputText></p>
+                    <p>car facturer : <h:inputText value="#{carSelectionBean.facturer}"></h:inputText></p>
+                    <p>car image : <h:inputText value="#{carSelectionBean.imgUrl}"></h:inputText></p>
+                    <h:commandButton action="#{carSelectionBean.updateCar()}" value="update"></h:commandButton>
+                  </h:form>
+                </div>
+                <div class="col-sm-4">
+                  <span class="glyphicon glyphicon-remove"></span>
+                  <h4>Delect</h4>
+                  <p>Delect a car</p>
+                  <p>
+                        <h:form>
+                            Car : <h:selectOneMenu value="#{carSelectionBean.carId}">
+                                <f:selectItems value="#{carSelectionBean.cars}" var="car" itemLabel="#{car.name.concat(' ').concat(car.manufacturer)}" itemValue="#{car.id}"></f:selectItems> 
+                            </h:selectOneMenu><br /><br />
+                            <h:commandButton action="#{carSelectionBean.delectCar()}" value="delect"></h:commandButton>
+                        </h:form>
+                  </p>
+                </div>
+                </div>
+              <br /><br />
+       </div>
+    </h:body>
+</html>
+

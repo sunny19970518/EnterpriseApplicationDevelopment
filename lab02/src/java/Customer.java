@@ -65,8 +65,8 @@ public class Customer {
     }
     
     public String handleAction(){
-        System.out.print(this.name);
-        System.out.print(this.gender);
+//        System.out.print(this.name);
+//        System.out.print(this.gender);
         return "showinfo";
     }
     
