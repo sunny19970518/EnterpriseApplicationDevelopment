@@ -1,0 +1,24 @@
+
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+              <navigation-rule>
+                <from-view-id>/page1.xhtml</from-view-id>
+                <navigation-case>
+                    <from-action>#{getPic.page1()}</from-action>
+                    <from-outcome>page1</from-outcome>
+                    <to-view-id>/page1.xhtml</to-view-id>
+                </navigation-case>
+                <navigation-case>
+                    <from-action>#{getPic.page2()}</from-action>
+                    <from-outcome>page2</from-outcome>
+                    <to-view-id>/page2.xhtml</to-view-id>
+                </navigation-case>
+                <navigation-case>
+                    <from-action>#{getPic.page3()}</from-action>
+                    <from-outcome>page3</from-outcome>
+                    <to-view-id>/page3.xhtml</to-view-id>
+                </navigation-case>
+            </navigation-rule>
+</faces-config>
