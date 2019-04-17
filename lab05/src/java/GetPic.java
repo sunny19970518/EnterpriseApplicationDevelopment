@@ -4,17 +4,19 @@
  * and open the template in the editor.
  */
 
+import java.io.Serializable;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 
 /**
  *
  * @author sunny
  */
 @Named(value = "getPic")
-@RequestScoped
-public class GetPic {
+@SessionScoped
+public class GetPic implements Serializable{
 
     
     private String pageID="1";
@@ -42,14 +44,14 @@ public class GetPic {
     }
     public String page(){
         if (pageID == null){
-            return "index?faces-redirect=true";
+            return "index";
         }
         if (pageID.equals("1")){
-            return "page1?faces-redirect=true";
+            return "page1";
         }else if (pageID.equals("2")){
-            return "page2?faces-redirect=true";
+            return "page2";
         }else if (pageID.equals("3")){
-            return "page3?faces-redirect=true";
+            return "page3";
         }else {          
          return "home";       
       }     
