@@ -80,19 +80,15 @@ public class CrudBean implements Serializable {
     }
     
     public String goUpdateItemPage(){
+        System.out.println("updateItem");
+        this.updateItem = itemFacade.find(itemID);
         return "updateItem";
     }
     
     public Item find(){
         return itemFacade.find(itemID);
     }
-    
-    public String editItem(){
-        this.updateItem = find();   
-        System.out.println(this.updateItem.getDescription());
-        return null;
-    }
-
+ 
     public String update(){
        Item editItem = getUpdateItem();
        itemFacade.edit(editItem);

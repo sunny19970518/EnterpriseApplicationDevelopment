@@ -7,11 +7,9 @@
         <title>Update Item</title>
         <f:metadata>
             <f:viewParam name="itemID" value="#{crudBean.itemID}"/>
-            <f:viewAction action="#{crudBean.editItem()}" />
         </f:metadata>
     </h:head>
     <h:body>
-        #{crudBean.itemID}
         <h:form>
             <h:panelGrid columns="2">
                 Image URL: <h:inputText value="#{crudBean.updateItem.image}"/>
